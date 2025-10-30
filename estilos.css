@@ -1,0 +1,301 @@
+/*  Paleta de colores Under Sea */
+:root {
+    --color1: #000f54; /* Azul marino oscuro */
+    --color2: #002e70; /* Azul profundo */
+    --color3: #42528d; /* Azul violáceo */
+    --color4: #7d7bac; /* Lavanda oscuro */
+    --color5: #afa5ca; /* Lavanda claro */
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos */
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: var(--color1);
+    background-image: url("fondo\ under\ sea.jpg"); /* pediente */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color5);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 15, 84, 0.9); /* var(--color1) con transparencia */
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 3px solid var(--color3);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--color5);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: var(--color4);
+    font-weight: normal;
+}
+
+/* Navegación */
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: var(--color3);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color5);
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a[aria-current="page"] {
+    background-color: var(--color2);
+    color: var(--blanco);
+}
+
+/*  Contenido principal */
+main {
+    padding: 40px 20px;
+    background-color: rgba(0, 46, 112, 0.6); /* var(--color2) translúcido */
+    text-align: center;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+/* Secciones destacadas */
+section {
+    margin-bottom: 50px;
+}
+
+section p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    color: var(--color5);
+}
+
+article {
+    background-color: rgba(66, 82, 141, 0.8); /* var(--color3 translúcido) */
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    margin-bottom: 10px;
+    color: var(--color4);
+    font-size: 1.3rem;
+}
+
+article p {
+    color: var(--blanco);
+    font-size: 1rem;
+}
+
+/* ooter */
+footer {
+    background-color: var(--color1);
+    color: var(--color5);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color3);
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    article {
+        max-width: 100%;
+    }
+}
+/* Mobile  */
+nav ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    article {
+        max-width: 600px;
+    }
+}
+
+/* ===== NAV FIX PACK (básico y accesible) ===== */
+
+/* El <ul> no pinta fondo; lo pintan solo los <a> */
+.site-nav .menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: .5rem;
+  }
+  
+  /* Quitamos padding/fondo del <li> para que no “se pinte el de al lado” */
+  .site-nav .menu li{
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  
+  /* El click, hover y activo se pintan en el <a> */
+  .site-nav .menu a{
+    display: block;                /* el fondo cubre bien el área clickeable */
+    padding: .5rem .75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;                   /* menú sobre header oscuro */
+    background: rgba(255,255,255,.08); /* base translúcida */
+    transition: background-color .2s ease;
+  }
+  
+  /* Hover con “transparencia” un poco más fuerte */
+  .site-nav .menu a:hover{
+    background: rgba(255,255,255,.18);
+  }
+  
+  /* ACTIVO: sólo el <a> con aria-current="page" */
+  .site-nav .menu a[aria-current="page"]{
+    background: var(--color2, #002e70); /* azul profundo de tu paleta */
+    color: #fff;
+  }
+  
+  /* Accesibilidad al navegar con teclado */
+  .site-nav .menu a:focus-visible{
+    outline: 3px solid var(--color4, #7d7bac);
+    outline-offset: 2px;
+  }
+  
+  /* En mobile, si usás menú colapsable, cuando se abra, que se vea en columna */
+  .site-nav.is-open .menu{
+    flex-direction: column;
+  }
+  .logo-header{
+    width:150px;
+    height:auto;
+    display:block;
+    margin:0 auto 0.5rem; /* centrado arriba del menú */
+  }
+  
+/* ====== MOBILE PACK FINAL (para Under Wave básico) ====== */
+
+/* Ajustes generales de texto e imágenes */
+img { max-width: 100%; height: auto; display: block; }
+body { word-break: break-word; }
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 600px){
+
+  header {
+    padding: 25px 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  article {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .logo-header {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets pequeñas (entre 600 y 900px) */
+@media (min-width: 601px) and (max-width: 900px){
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  nav ul li a {
+    padding: 10px 15px;
+  }
+}
